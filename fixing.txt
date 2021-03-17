@@ -1,0 +1,15 @@
+I was getting trouble with silly stuff building this app.
+Is not finished yet btw (It's almost 2 AM on 3/17/21)
+
+For example connecting Mongo with the app, I couldn't get to connect Mongo
+because of the password. It was written like this <password>
+and I just changed the inside part <myPassword> but I had to also delete
+the signs.
+
+The other one was that I couldn't create databases or collections because I had
+all my Express request handlers were outside the then call. Once I got them in 
+I still had trouble, why? I forgot I disabled body parser before because I 
+thought that it showing an extra object would bother my terminal and guess what
+The last problem was just that, that I disabled body parser (Thank you StackOverflow)
+
+// When Finished: What I Learned

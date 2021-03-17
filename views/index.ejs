@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIT APP</title>
+</head>
+<body>
+    <h1>May Node, Express and the dollars be with you</h1>
+
+    <form action="/quotes" method="POST">
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="quote" name="quote">
+      <input type="submit">
+    </form>
+
+    <h2> Quotes </h2>
+
+    <ul class="quotes">
+      <!-- Loop through quotes -->
+      <% for(var i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+          <!-- Output name from the iterated quote object -->
+          <span><%= quotes[i].name %></span>
+          <!-- Output name from the iterated quote object -->
+          <span><%= quotes[i].quote %></span>
+        </li>
+      <% } %>
+    </ul>
+
+    <!-- If we display quotes just like this they'll appear just like objects
+    because ejs can't convert the object into HTML in auto, so we loop like
+    above -->
+    <!-- <%= quotes %> -->
+</body>
+</html>
