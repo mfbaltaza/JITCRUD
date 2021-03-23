@@ -48,6 +48,28 @@ MongoClient.connect('mongodb+srv://BaltaZa:gangties@gangwe.9rs06.mongodb.net/myF
 
 		app.listen(3000, function () {
 			console.log('Listening on 3000');
-		});
+		})
+
+		// UPDATE
+		// Express accessing the public folder & accepting JSON
+		app.use(express.static('public'))
+		app.use(bodyParser.json())
+
+		app.put('/quotes', (req, res) => {
+			quotesCollection.findOneAndUpdate(
+				{ name: 'Yoda' },
+				{
+					$set: {
+						name: req.body.name,
+						quote: req.body.quote
+					}
+				},
+				{
+					upsert:true
+				}
+			)
+			.then( result => { res.json('Success') })
+			.catch( error => console.error(error))
+		})
 	})
 	.catch(error => console.error(error))
